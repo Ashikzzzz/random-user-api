@@ -10,5 +10,7 @@ module.exports.randomUser = (req, res, next) => {
 
 // get all user
 module.exports.getAllUser = (req, res) => {
-  res.json(datas);
+  const { limit } = req.query;
+  console.log(limit);
+  res.json(datas.slice(0, limit));
 };
