@@ -1,8 +1,8 @@
 const express = require("express");
-const userRoute = require("../controllers/user.getRandom");
-
+const getAllRoute = require("../controllers/user.getRandom");
 const router = express.Router();
 
+// get all user
 /**
  * @api {get} /get random api
  * @apiDescription view user random data after every
@@ -18,7 +18,6 @@ const router = express.Router();
  * @apiError (Unauthorized 401)  Unauthorized  Only authenticated users can access the data
  * @apiError (Forbidden 403)     Forbidden     Only admins can access the data
  */
-// random user
-router.get("/", userRoute.randomUser);
+router.get("/", getAllRoute.getAllUser);
 
 module.exports = router;

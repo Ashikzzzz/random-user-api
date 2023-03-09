@@ -5,6 +5,7 @@ require("dotenv").config();
 const port = process.env.PORT || 5000;
 // import routes
 const getUserRoute = require("./routes/user.getRoute");
+const allUser = require("./routes/getAllUser");
 
 app.use(cors());
 app.use(express.json());
@@ -12,6 +13,7 @@ app.use(express.json());
 // uses of routes
 
 app.use("/api/v1/user/random", getUserRoute);
+app.use("/api/v1/user/all", allUser);
 
 app.get("/", (req, res) => {
   res.send("Random user is running");
