@@ -15,8 +15,17 @@ module.exports.getAllUser = (req, res) => {
   res.json(datas.slice(0, limit));
 };
 
+// get one user
+
 module.exports.getOneUSer = (req, res) => {
   const { id } = req.params;
   const filter = datas.find((data) => data.id == id);
   res.send(filter);
+};
+
+// post a user
+module.exports.postUser = (req, res) => {
+  const newData = req.body;
+  datas.push(newData);
+  res.json(datas);
 };

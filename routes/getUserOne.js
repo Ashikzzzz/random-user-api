@@ -4,8 +4,8 @@ const getOneData = require("../controllers/user.getRandom");
 const router = express.Router();
 
 /**
- * @api {get} /get random api
- * @apiDescription view user random data after every
+ * @api {get} /get one user
+ * @apiDescription user see one user after calling by id
  * @apiPermission everyone
  *
  

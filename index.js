@@ -7,6 +7,7 @@ const port = process.env.PORT || 5000;
 const getUserRoute = require("./routes/user.getRoute");
 const allUser = require("./routes/getAllUser");
 const getOne = require("./routes/getUserOne");
+const postData = require("./routes/postUser");
 
 app.use(cors());
 app.use(express.json());
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use("/api/v1/user/random", getUserRoute);
 app.use("/api/v1/user/all", allUser);
 app.use("/api/v1/user/all", getOne);
+app.use("/api/v1/user/all", postData);
 
 app.get("/", (req, res) => {
   res.send("Random user is running");
