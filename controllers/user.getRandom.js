@@ -46,3 +46,12 @@ module.exports.updateUser = (req, res) => {
 
   res.send(updateData);
 };
+
+// delete user
+module.exports.deleteUser = (req, res) => {
+  const { id } = req.params;
+  const filter = { id: id };
+  const leftData = datas.filter((data) => data.id != id);
+
+  res.send(leftData);
+};
