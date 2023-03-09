@@ -8,6 +8,7 @@ const getUserRoute = require("./routes/user.getRoute");
 const allUser = require("./routes/getAllUser");
 const getOne = require("./routes/getUserOne");
 const postData = require("./routes/postUser");
+const updateData = require("./routes/updateData");
 
 app.use(cors());
 app.use(express.json());
@@ -18,6 +19,7 @@ app.use("/api/v1/user/random", getUserRoute);
 app.use("/api/v1/user/all", allUser);
 app.use("/api/v1/user/all", getOne);
 app.use("/api/v1/user/all", postData);
+app.use("/api/v1/user/all", updateData);
 
 app.get("/", (req, res) => {
   res.send("Random user is running");

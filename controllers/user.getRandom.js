@@ -26,6 +26,23 @@ module.exports.getOneUSer = (req, res) => {
 // post a user
 module.exports.postUser = (req, res) => {
   const newData = req.body;
+
   datas.push(newData);
+
   res.json(datas);
+};
+
+// update user
+module.exports.updateUser = (req, res) => {
+  const { id } = req.params;
+  const filter = { id: id };
+  const updateData = datas.find((data) => data.id == id);
+
+  updateData.id = id;
+  updateData.name = req.body.name;
+  updateData.gendar = req.body.gendar;
+  updateData.contact = req.body.contact;
+  updateData.adress = req.body.adress;
+
+  res.send(updateData);
 };
