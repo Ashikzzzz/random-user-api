@@ -1,5 +1,5 @@
 const express = require("express");
-const userRoute = require("../controllers/user.getRandom");
+const getOneData = require("../controllers/user.getRandom");
 
 const router = express.Router();
 
@@ -10,7 +10,6 @@ const router = express.Router();
  *
  
  */
-// random user
-router.get("/", userRoute.randomUser);
+router.get("/:id", getOneData.getOneUSer);
 
 module.exports = router;
